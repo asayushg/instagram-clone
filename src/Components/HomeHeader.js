@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Image, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Image, View, Text } from 'react-native';
 import ImageButton from './ImageButton';
 
 
@@ -23,6 +23,7 @@ const HomeHeader = () =>{
                 }}
             />
 
+            <View style={styles.unreadBadge} ><Text style={styles.badgeText} >1</Text></View>
             <ImageButton 
                 image={require('../../assests/messenger.png')}
                 style={styles.newPost}
@@ -62,10 +63,26 @@ const styles = StyleSheet.create({
     newPost: {
         width: 25,
         height: 25,
-        margin: 12,
+        margin: 10,
         tintColor: 'black'
     },
 
+    unreadBadge:{
+        position: 'absolute',
+        backgroundColor: '#FF3250',
+        paddingStart: 6,
+        paddingEnd: 6,
+        alignItems: 'center',
+        borderRadius: 24,
+        right: -1,
+        top: 3,
+        zIndex: 100,
+    },
+
+    badgeText: {
+        color: 'white',
+        fontWeight: '600'
+    }
     
 
 })
